@@ -1,0 +1,64 @@
+<app-header>
+    <p levels>articles</p>
+    
+    <div content>
+        <p>Witam w sklepie ogrodniczym Gabi wersja 2:)</p>
+    </div>
+</app-header>
+
+<div class="container">
+    <div class= "row" >
+        <div class="col-sm-12">
+            <table class=" sz-table table table-striped">
+                <thead>
+                    <tr>
+                        
+                        <th>name</th>
+                        <th>price</th>
+                        <th>vat</th>
+                        <th>amount</th>
+                        <th>action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let article of articles;let i =index">
+                        <td>{{article.name}}</td>
+                        <td>{{article.price}}</td>
+                        <td>{{article.vat}}</td>
+                        <td>{{article.amount}}</td>
+                        <td (click)="removeArticle(article)"> ( X )</td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    </div>
+    <p class="data-header">Formularz dodawania nowego Article do listy</p>
+    <div class="data-container">
+        <form>
+            <div class="row form-group">
+                <div class="col-sm-4">
+                    <label>name</label>
+                    <input type="text" class="form-control" placeholder="wpisz nazwę">
+                    </div>
+                 <div class="col-sm-4">
+                    <label>price</label>
+                    <input type="text" class="form-control" placeholder="wpisz cenę netto">
+                    </div>
+                <div class="col-sm-4">
+                    <label>vat</label>
+                     <input type="text" class="form-control" placeholder="wpisz stawke VAT">
+                    </div>
+                <div class="col-sm-4">
+                    <label>amount</label>
+                    <input type="text" class="form-control" placeholder="Wpisz liczbe sztuk na magazynie">
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-primary float-right">Add article</button>
+                </div>
+            </div>
+        </form>
+    </div>
